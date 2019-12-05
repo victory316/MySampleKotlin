@@ -3,6 +3,8 @@ Android Application with Kotlin, actively using Jetpack and architecture pattern
 
 < COMPLETED SPECIFICATIONS >
 
+- Working on now yet! 😉
+
 < GOAL SPECIFICATIONS >
 
 - MVVM
