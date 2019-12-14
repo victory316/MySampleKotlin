@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".splash.SplashActivity">
 
+
     <TextView
         android:id="@+id/text_view"
         android:layout_width="wrap_content"
