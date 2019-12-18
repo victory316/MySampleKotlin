@@ -3,16 +3,19 @@ Android Application with Kotlin, actively using Jetpack and architecture pattern
 
 by SeungWhan Choi
 
-Last update : 191205
+Last update : 191218
 
 < COMPLETED SPECIFICATIONS >
 
-- Working on now yet! 🤧
+- Jetpack Navigation Component
 
 < GOAL SPECIFICATIONS >
 
 - MVVM
 - Room DB
-- Navigation
 - Firebase
+- Notifications
+- Widgets
+- Foreground / background service
+- Paging
 - .... more things of core functions, great and fun features!
