@@ -1,7 +1,9 @@
-package com.example.sampleappbyme.main.fragment
+package com.example.sampleappbyme.main.viewmodel
 
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     // TODO: Implement the ViewModel
+
+
 }

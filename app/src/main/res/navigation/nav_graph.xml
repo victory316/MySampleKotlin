@@ -7,14 +7,22 @@
 
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.example.sampleappbyme.main.fragment.MainFragment"
+        android:name="com.example.sampleappbyme.main.view.fragment.MainFragment"
         android:label="activity_main"
         tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/action_go_to_recycler_view_fragment"
+            app:destination="@id/recyclerViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_right"/>
     </fragment>
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.sampleappbyme.main.fragment.SplashFragment"
+        android:name="com.example.sampleappbyme.main.view.fragment.SplashFragment"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" >
 
@@ -25,5 +33,12 @@
             app:exitAnim="@anim/slide_out_right"
             app:popExitAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_in_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.example.sampleappbyme.main.view.fragment.RecyclerViewFragment"
+        android:label="activity_main"
+        tools:layout="@layout/main_fragment">
     </fragment>
 </navigation>

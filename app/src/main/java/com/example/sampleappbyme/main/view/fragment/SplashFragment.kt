@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main.fragment
+package com.example.sampleappbyme.main.view.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,14 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.viewmodel.MainViewModel
 
 class SplashFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SplashFragment()
+        fun newInstance() =
+            SplashFragment()
     }
 
-    private lateinit var viewModel: SplashViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +28,7 @@ class SplashFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SplashViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
