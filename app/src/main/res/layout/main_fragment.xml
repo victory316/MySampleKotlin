@@ -11,32 +11,14 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button_1"
+            android:id="@+id/card_view_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SHOW ME MVVM RecyclerView"
-            android:layout_marginTop="200dp"
+            android:text="SHOW ME CardView ViewPager"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <Button
-            android:id="@+id/button_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SHOW ME ViewPager2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_1"/>
-
-        <Button
-            android:id="@+id/button_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SHOW ME MotionLayout"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_2"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/developer_tag_view_1"

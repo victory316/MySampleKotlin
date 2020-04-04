@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.databinding.MainFragmentBinding
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -18,12 +20,18 @@ class MainFragment : Fragment() {
     }
 
     private lateinit var viewModel: MainViewModel
+    private lateinit var mainFragmentBinding: MainFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        mainFragmentBinding = MainFragmentBinding.inflate(inflater, container, false)
+        mainFragmentBinding.cardViewButton.setOnClickListener {
+
+        }
+
+        return mainFragmentBinding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
