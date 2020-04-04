@@ -1,10 +1,10 @@
 package com.example.sampleappbyme.main.data
 
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
+@Dao
 interface SampleDao {
-
+    @Query("SELECT * FROM sample")
+    fun getAll(): LiveData<List<SampleData>>
 }
