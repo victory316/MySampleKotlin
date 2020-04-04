@@ -6,6 +6,7 @@ import android.os.Handler
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,4 +22,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp() = findNavController(R.id.nav_host).navigateUp()
+
+    fun obtainViewModel(): MainViewModel {
+        return MainViewModel()
+    }
 }
