@@ -28,8 +28,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp() = findNavController(R.id.nav_host).navigateUp()
 
     fun obtainViewModel(): MainViewModel = obtainViewModel(MainViewModel::class.java)
-
-    fun startRecyclerViewFragment() {
-        navController.navigate(R.id.action_go_to_recycler_view_fragment)
-    }
 }

@@ -30,15 +30,15 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mainFragmentBinding = MainFragmentBinding.inflate(inflater, container, false)
-            .apply {
-                viewModel = (activity as MainActivity).obtainViewModel()
-            }
 
         navController = findNavController()
 
-        // viewModel에 navController 설정
-        mainFragmentBinding.viewModel?.setNavController(navController)
+        mainFragmentBinding = MainFragmentBinding.inflate(inflater, container, false)
+            .apply {
+                // activity로부터 viewModel 로드 및 navController 설정
+                viewModel = (activity as MainActivity).obtainViewModel()
+                viewModel?.setNavController(navController)
+            }
 
         return mainFragmentBinding.root
     }

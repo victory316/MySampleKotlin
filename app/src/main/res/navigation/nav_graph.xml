@@ -18,6 +18,14 @@
             app:exitAnim="@anim/slide_out_right"
             app:popExitAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_in_right"/>
+
+        <action
+            android:id="@+id/action_go_to_card_view_fragment"
+            app:destination="@id/cardViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_right"/>
     </fragment>
 
     <fragment
@@ -38,6 +46,13 @@
     <fragment
         android:id="@+id/recyclerViewFragment"
         android:name="com.example.sampleappbyme.main.view.fragment.RecyclerViewFragment"
+        android:label="activity_main"
+        tools:layout="@layout/main_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardViewFragment"
+        android:name="com.example.sampleappbyme.main.view.fragment.CardViewFragment"
         android:label="activity_main"
         tools:layout="@layout/main_fragment">
     </fragment>

@@ -19,6 +19,6 @@ class MainViewModel(
 
     // CardView ViewPager로 페이지 변경
     fun goToCardViewViewPager() {
-        navController.navigate(R.id.action_go_to_recycler_view_fragment)
+        navController.navigate(R.id.action_go_to_card_view_fragment)
     }
 }
