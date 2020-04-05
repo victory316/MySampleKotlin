@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main.ui
+package com.example.sampleappbyme.main.ui.card
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.sampleappbyme.databinding.MainCardAdapterBinding
-import com.example.sampleappbyme.main.ui.CardAdapter.Companion.MAX_ELEVATION_FACTOR
+import com.example.sampleappbyme.main.ui.card.CardAdapter
+import com.example.sampleappbyme.main.ui.card.CardAdapter.Companion.MAX_ELEVATION_FACTOR
+import com.example.sampleappbyme.main.ui.card.CardItem
 
 class CardPagerAdapter(val context: Context): CardAdapter, PagerAdapter(){
     private var mViews: MutableList<CardView> = mutableListOf()
@@ -24,7 +26,6 @@ class CardPagerAdapter(val context: Context): CardAdapter, PagerAdapter(){
     }
 
     fun addCardItem(item: CardItem) {
-//        mViews.add(null)
         mData.add(item)
     }
 
@@ -33,9 +34,7 @@ class CardPagerAdapter(val context: Context): CardAdapter, PagerAdapter(){
                 as LayoutInflater
 
         binding = MainCardAdapterBinding.inflate(inflater)
-//        binding.titleText.text = mData[position].getTitle()
         binding.contentText.text = mData[position].getText()
-
 
         binding.cardView.maxCardElevation = mBaseElevation * MAX_ELEVATION_FACTOR
 

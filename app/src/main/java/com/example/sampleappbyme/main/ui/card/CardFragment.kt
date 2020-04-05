@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main.ui
+package com.example.sampleappbyme.main.ui.card
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.sampleappbyme.databinding.MainCardAdapterBinding
+import com.example.sampleappbyme.main.ui.card.CardAdapter
 
 class CardFragment : Fragment() {
     private lateinit var mCardView: CardView

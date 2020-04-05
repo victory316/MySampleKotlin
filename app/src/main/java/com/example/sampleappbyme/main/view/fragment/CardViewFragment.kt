@@ -1,7 +1,5 @@
 package com.example.sampleappbyme.main.view.fragment
 
-import android.content.Context
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,16 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 
-import com.example.sampleappbyme.R
 import com.example.sampleappbyme.databinding.CardViewFragmentBinding
-import com.example.sampleappbyme.main.ui.CardAdapter
-import com.example.sampleappbyme.main.ui.CardFragmentPagerAdapter
-import com.example.sampleappbyme.main.ui.CardItem
-import com.example.sampleappbyme.main.ui.CardPagerAdapter
-import com.example.sampleappbyme.main.viewmodel.MainViewModel
+import com.example.sampleappbyme.main.ui.card.CardAdapter
+import com.example.sampleappbyme.main.ui.card.CardItem
+import com.example.sampleappbyme.main.ui.card.CardPagerAdapter
 
 class CardViewFragment : Fragment() {
 
@@ -36,12 +30,38 @@ class CardViewFragment : Fragment() {
 
         binding = CardViewFragmentBinding.inflate(inflater, container, false)
 
-        val testCardAdapter = CardPagerAdapter(activity!!.applicationContext)
-        testCardAdapter.addCardItem(CardItem("First Card", "First Card"))
-        testCardAdapter.addCardItem(CardItem("Second Card", "Second Card"))
-        testCardAdapter.addCardItem(CardItem("Third Card", "Third Card"))
-        testCardAdapter.addCardItem(CardItem("Forth Card", "Forth Card"))
-        testCardAdapter.addCardItem(CardItem("Fifth Card", "Fifth Card"))
+        val testCardAdapter =
+            CardPagerAdapter(activity!!.applicationContext)
+        testCardAdapter.addCardItem(
+            CardItem(
+                "First Card",
+                "First Card"
+            )
+        )
+        testCardAdapter.addCardItem(
+            CardItem(
+                "Second Card",
+                "Second Card"
+            )
+        )
+        testCardAdapter.addCardItem(
+            CardItem(
+                "Third Card",
+                "Third Card"
+            )
+        )
+        testCardAdapter.addCardItem(
+            CardItem(
+                "Forth Card",
+                "Forth Card"
+            )
+        )
+        testCardAdapter.addCardItem(
+            CardItem(
+                "Fifth Card",
+                "Fifth Card"
+            )
+        )
 
         var mLastOffset = 0f
 
