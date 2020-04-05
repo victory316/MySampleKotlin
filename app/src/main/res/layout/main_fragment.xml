@@ -49,6 +49,16 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/backdrop_button"/>
 
+            <Button
+                android:id="@+id/mvvm_view_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="SHOW ME MVVM list sample"
+                android:onClick="@{() -> viewModel.showNotYetToast()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/foreground_service_button"/>
+
             <TextView
                 android:id="@+id/developer_tag_view_1"
                 android:layout_width="wrap_content"

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.sampleappbyme.main.data.SampleRepository
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
+import com.example.sampleappbyme.main.viewmodel.TaskViewModel
 
 class ViewModelFactory private constructor(
     private val sampleRepository: SampleRepository
@@ -16,6 +17,8 @@ class ViewModelFactory private constructor(
             when {
                 isAssignableFrom(MainViewModel::class.java) ->
                     MainViewModel(sampleRepository)
+                isAssignableFrom(TaskViewModel::class.java) ->
+                    TaskViewModel(sampleRepository)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
