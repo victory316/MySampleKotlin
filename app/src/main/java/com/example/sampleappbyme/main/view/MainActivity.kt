@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             navController.navigate(R.id.action_go_to_main_fragment)
-        }, 1500)
+        }, 1200)
     }
 
     override fun onSupportNavigateUp() = findNavController(R.id.nav_host).navigateUp()

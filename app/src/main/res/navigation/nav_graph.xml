@@ -34,12 +34,9 @@
         <action
             android:id="@+id/action_go_to_main_fragment"
             app:destination="@id/mainMenuFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true"
-            app:popExitAnim="@anim/slide_in_left"
-            app:popEnterAnim="@anim/slide_in_right"/>
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

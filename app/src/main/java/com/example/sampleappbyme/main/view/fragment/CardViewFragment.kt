@@ -106,8 +106,6 @@ class CardViewFragment : Fragment() {
 
                 val nextCard: CardView = (binding.cardViewPager.adapter as CardPagerAdapter).getCardViewAt(nextPosition)
 
-                Log.d("scrollTest", "realCurrent : $realCurrentPosition nextPosition : $nextPosition")
-
                 nextCard.scaleX = (1 + 0.1 * realOffset).toFloat()
                 nextCard.scaleY = (1 + 0.1 * realOffset).toFloat()
 
