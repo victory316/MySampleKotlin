@@ -5,14 +5,14 @@ by SeungWhan Choi
 
 Last update : 200405
 
-< COMPLETED SPECIFICATIONS >
+### COMPLETED SPECIFICATIONS
 
 - Jetpack Navigation Component
 - MVVM with ViewModelFactory
 - ROOM
 - ViewPager with CardView
 
-< GOAL SPECIFICATIONS >
+### GOAL SPECIFICATIONS
 
 - Firebase
 - Notifications
@@ -22,7 +22,7 @@ Last update : 200405
 - Paging
 - .... more things of core functions, great and fun features!
 
-< References >
+### References
 
 - ViewPager with CardView : https://github.com/rubensousa/ViewPagerCards/
 - MVVM : https://github.com/android/architecture-samples
