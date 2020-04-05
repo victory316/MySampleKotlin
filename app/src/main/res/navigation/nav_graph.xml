@@ -26,7 +26,7 @@
         <action
             android:id="@+id/action_go_to_task_view_fragment"
             app:destination="@id/taskViewFragment"
-            app:enterAnim="@anim/slide_in_right"
+            app:enterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
 
@@ -61,6 +61,7 @@
     <fragment
         android:id="@+id/taskViewFragment"
         android:name="com.example.sampleappbyme.main.view.fragment.TaskViewFragment"
-        tools:layout="@layout/card_view_fragment">
+        android:label="activity_main"
+        tools:layout="@layout/task_view_fragment">
     </fragment>
 </navigation>

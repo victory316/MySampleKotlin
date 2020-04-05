@@ -24,6 +24,10 @@ class MainViewModel(
         navController.navigate(R.id.action_go_to_card_view_fragment)
     }
 
+    fun goToTaskViewFragment() {
+        navController.navigate(R.id.action_go_to_task_view_fragment)
+    }
+
     fun showNotYetToast() {
         showToast.set(true)
     }
