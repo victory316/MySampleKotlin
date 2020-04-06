@@ -31,8 +31,8 @@ class MainViewModel : ViewModel() {
         showToast.set(true)
     }
 
-    // 
+
     fun startForegroundService() {
-//        startForegroundService.set(true)
+        startForegroundService.set(true)
     }
 }

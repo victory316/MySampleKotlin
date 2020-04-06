@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".main.util.HelloIntentService" />
+        <service android:name=".main.util.SampleForegroundService" />
 
         <activity android:name=".main.view.MainActivity"
             android:configChanges="uiMode">

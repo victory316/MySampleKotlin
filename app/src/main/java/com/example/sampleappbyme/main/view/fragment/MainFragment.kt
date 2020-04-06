@@ -7,13 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.Observable
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.sampleappbyme.databinding.MainFragmentBinding
-import com.example.sampleappbyme.main.util.HelloIntentService
+import com.example.sampleappbyme.main.util.SampleForegroundService
 import com.example.sampleappbyme.main.view.MainActivity
+import timber.log.Timber
 
 
 class MainFragment : Fragment() {
@@ -32,6 +34,7 @@ class MainFragment : Fragment() {
     ): View? {
 
         navController = findNavController()
+
 
         mainFragmentBinding = MainFragmentBinding.inflate(inflater, container, false)
             .apply {
@@ -53,7 +56,13 @@ class MainFragment : Fragment() {
                     startForegroundService.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
                         override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
                             if (viewModel!!.startForegroundService.get()) {
-                                startService()
+                                Timber.tag("Timber").d("mutable : ${viewModel!!.startForegroundService.get()}")
+
+                                if (!serviceActivated) {
+                                    startService()
+                                } else {
+                                    stopService()
+                                }
                                 viewModel!!.startForegroundService.set(false)
                             }
                         }
@@ -70,14 +79,24 @@ class MainFragment : Fragment() {
         }
     }
 
-    fun startService() {
-        val intent = Intent(context, HelloIntentService::class.java)
+    private var serviceActivated = false
 
-        if (Build.VERSION.SDK_INT >= 26) {
-            context!!.startForegroundService(intent)
-        } else {
-            context!!.startService(intent)
-        }
+    fun startService() {
+
+        val serviceIntent = Intent(context, SampleForegroundService::class.java)
+        serviceIntent.putExtra("inputExtra", "Foreground Service Example in Android")
+        ContextCompat.startForegroundService(context!!, serviceIntent)
+        serviceActivated = true
+
+        Toast.makeText(context, "Starting foreground service", Toast.LENGTH_SHORT).show()
+    }
+
+    fun stopService() {
+        val serviceIntent = Intent(context, SampleForegroundService::class.java)
+        activity!!.stopService(serviceIntent)
+        serviceActivated = false
+
+        Toast.makeText(context, "Finishing foreground service", Toast.LENGTH_SHORT).show()
     }
 
 }

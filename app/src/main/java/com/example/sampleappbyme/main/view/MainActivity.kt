@@ -1,18 +1,19 @@
 package com.example.sampleappbyme.main.view
 
+import android.content.Intent
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.util.SampleForegroundService
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
 import timber.log.Timber
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,41 +32,12 @@ class MainActivity : AppCompatActivity() {
         Timber.d("onCreate on MainActivity")
     }
 
+    // 다크모드 변경시 앱 재시작을 통한 테마 설정
+    // 앱을 재시작하고 있으므로 사용중에 불편함을 초래할 수 있음. 향후 리뷰 요망
     override fun onConfigurationChanged(newConfig: Configuration) {
-        Timber.d("configuration changed : $newConfig")
+        startActivity(Intent(this@MainActivity, this@MainActivity.javaClass))
 
         super.onConfigurationChanged(newConfig)
-    }
-
-    fun setupForegroundService() {
-
-        val builder = NotificationCompat.Builder(this, CHANNEL_ID).apply {
-            setContentTitle("Picture Download")
-            setContentText("Download in progress")
-            setSmallIcon(R.drawable.ic_launcher_foreground)
-            priority = NotificationCompat.PRIORITY_LOW
-        }
-
-        NotificationManagerCompat.from(this).apply {
-            // Issue the initial notification with zero progress
-            builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)
-            notify(NOTIFICATION_ID, builder.build())
-
-            // Do the job here that tracks the progress.
-            // Usually, this should be in a
-            // worker thread
-            // To show progress, update PROGRESS_CURRENT and update the notification with:
-            // builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false);
-            // notificationManager.notify(notificationId, builder.build());
-
-            // When done, update the notification one more time to remove the progress bar
-            builder.setContentText("Download complete")
-                .setProgress(0, 0, false)
-            notify(NOTIFICATION_ID, builder.build())
-        }
-
-
-
     }
 
     override fun onSupportNavigateUp() = findNavController(R.id.nav_host).navigateUp()
