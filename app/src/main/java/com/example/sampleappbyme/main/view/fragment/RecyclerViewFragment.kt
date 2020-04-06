@@ -12,11 +12,6 @@ import com.example.sampleappbyme.main.viewmodel.MainViewModel
 
 class RecyclerViewFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            RecyclerViewFragment()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

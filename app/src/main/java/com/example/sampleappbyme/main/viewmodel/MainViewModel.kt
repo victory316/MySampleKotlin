@@ -31,8 +31,11 @@ class MainViewModel : ViewModel() {
         showToast.set(true)
     }
 
-
     fun startForegroundService() {
         startForegroundService.set(true)
+    }
+
+    fun startLifecycleFragment() {
+
     }
 }

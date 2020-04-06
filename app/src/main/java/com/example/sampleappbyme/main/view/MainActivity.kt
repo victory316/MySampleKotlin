@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
@@ -18,6 +19,7 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+    private var splashShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +28,11 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host)
 
         Handler().postDelayed({
-            navController.navigate(R.id.action_go_to_main_fragment)
+            if (!splashShown) {
+                navController.navigate(R.id.action_go_to_main_fragment)
+                splashShown = true
+            }
         }, 1200)
-
-        Timber.d("onCreate on MainActivity")
     }
 
     // 다크모드 변경시 앱 재시작을 통한 테마 설정

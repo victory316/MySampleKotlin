@@ -17,11 +17,6 @@ import com.example.sampleappbyme.main.ui.card.CardPagerAdapter
 
 class TaskViewFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            TaskViewFragment()
-    }
-    
     private lateinit var binding: TaskViewFragmentBinding
 
     override fun onCreateView(

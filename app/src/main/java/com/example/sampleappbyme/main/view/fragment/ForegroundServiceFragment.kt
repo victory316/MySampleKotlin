@@ -12,20 +12,10 @@ import com.example.sampleappbyme.main.viewmodel.MainViewModel
 
 class ForegroundServiceFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            ForegroundServiceFragment()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.recyclerview_fragment, container, false)
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
 }

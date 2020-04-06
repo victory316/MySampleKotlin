@@ -20,11 +20,6 @@ import timber.log.Timber
 
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            MainFragment()
-    }
-
     private lateinit var mainFragmentBinding: MainFragmentBinding
     private lateinit var navController: NavController
 
