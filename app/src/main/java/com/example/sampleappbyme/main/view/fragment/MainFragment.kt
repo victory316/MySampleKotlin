@@ -1,22 +1,20 @@
 package com.example.sampleappbyme.main.view.fragment
 
-import androidx.lifecycle.ViewModelProviders
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.Observable
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-
-import com.example.sampleappbyme.R
 import com.example.sampleappbyme.databinding.MainFragmentBinding
+import com.example.sampleappbyme.main.util.HelloIntentService
 import com.example.sampleappbyme.main.view.MainActivity
-import com.example.sampleappbyme.main.viewmodel.MainViewModel
-import java.util.*
+
 
 class MainFragment : Fragment() {
 
@@ -50,7 +48,15 @@ class MainFragment : Fragment() {
                                 viewModel!!.showToast.set(false)
                             }
                         }
+                    })
 
+                    startForegroundService.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
+                        override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                            if (viewModel!!.startForegroundService.get()) {
+                                startService()
+                                viewModel!!.startForegroundService.set(false)
+                            }
+                        }
                     })
                 }
             }
@@ -63,4 +69,15 @@ class MainFragment : Fragment() {
             Toast.makeText(context, "Not yet finished :)", Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun startService() {
+        val intent = Intent(context, HelloIntentService::class.java)
+
+        if (Build.VERSION.SDK_INT >= 26) {
+            context!!.startForegroundService(intent)
+        } else {
+            context!!.startService(intent)
+        }
+    }
+
 }

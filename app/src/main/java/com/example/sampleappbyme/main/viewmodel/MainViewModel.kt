@@ -8,12 +8,11 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.main.data.SampleRepository
 
-class MainViewModel(
-    val sampleRepository: SampleRepository
-) : ViewModel() {
+class MainViewModel : ViewModel() {
 
     private lateinit var navController: NavController
     var showToast = ObservableBoolean()
+    var startForegroundService = ObservableBoolean()
 
     fun setNavController(controller: NavController) {
         navController = controller
@@ -30,5 +29,9 @@ class MainViewModel(
 
     fun showNotYetToast() {
         showToast.set(true)
+    }
+
+    fun startForegroundService() {
+        startForegroundService.set(true)
     }
 }

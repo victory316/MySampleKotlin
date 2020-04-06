@@ -16,7 +16,7 @@ class ViewModelFactory private constructor(
         with(modelClass) {
             when {
                 isAssignableFrom(MainViewModel::class.java) ->
-                    MainViewModel(sampleRepository)
+                    MainViewModel()
                 isAssignableFrom(TaskViewModel::class.java) ->
                     TaskViewModel(sampleRepository)
                 else ->
