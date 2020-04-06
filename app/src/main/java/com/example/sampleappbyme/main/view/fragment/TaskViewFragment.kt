@@ -1,5 +1,6 @@
 package com.example.sampleappbyme.main.view.fragment
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,9 @@ import com.example.sampleappbyme.databinding.TaskViewFragmentBinding
 import com.example.sampleappbyme.main.ui.card.CardAdapter
 import com.example.sampleappbyme.main.ui.card.CardItem
 import com.example.sampleappbyme.main.ui.card.CardPagerAdapter
+import com.example.sampleappbyme.main.view.MainActivity
+import com.google.android.material.snackbar.Snackbar
+import timber.log.Timber
 
 class TaskViewFragment : Fragment() {
 
@@ -23,9 +27,47 @@ class TaskViewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Timber.i("creating fragment view")
 
-        binding = TaskViewFragmentBinding.inflate(inflater, container, false)
+        binding = TaskViewFragmentBinding.inflate(inflater, container, false).apply {
+            viewmodel = (activity as MainActivity).obtainTaskViewModel()
+        }
+
+        setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onStart() {
+        (activity as MainActivity).binding.fabAddTask.visibility = View.VISIBLE
+
+        Timber.i("onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+
+        Timber.i("onResume")
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        (activity as MainActivity).binding.fabAddTask.visibility = View.INVISIBLE
+
+        super.onDestroy()
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Timber.i("activity created")
+
+        binding.viewmodel?.let {
+//            view?.setupSnackbar(this, it.snackbarMessage, Snackbar.LENGTH_LONG)
+        }
+        binding.lifecycleOwner = this.viewLifecycleOwner
+
+//        setupFab()
+//        setupListAdapter()
+//        setupRefreshLayout()
     }
 }

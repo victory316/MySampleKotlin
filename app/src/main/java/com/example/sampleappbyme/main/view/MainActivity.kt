@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.databinding.ActivityMainBinding
 import com.example.sampleappbyme.main.util.DessertTimer
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
+import com.example.sampleappbyme.main.viewmodel.TaskViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,10 +21,12 @@ class MainActivity : AppCompatActivity() {
     private var splashShown = false
 
     private lateinit var dessertTimer: DessertTimer
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         navController = findNavController(R.id.nav_host)
 
@@ -49,6 +53,8 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp() = findNavController(R.id.nav_host).navigateUp()
 
     fun obtainViewModel(): MainViewModel = obtainViewModel(MainViewModel::class.java)
+
+    fun obtainTaskViewModel(): TaskViewModel = obtainViewModel(TaskViewModel::class.java)
 
     companion object {
         const val CHANNEL_ID = "TEMP_CHANNEL"
