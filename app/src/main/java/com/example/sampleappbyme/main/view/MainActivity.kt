@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     // 다크모드 변경시 앱 재시작을 통한 테마 설정
     // 앱을 재시작하고 있으므로 사용중에 불편함을 초래할 수 있음. 향후 리뷰 요망
     override fun onConfigurationChanged(newConfig: Configuration) {
+        finish()
         startActivity(Intent(this@MainActivity, this@MainActivity.javaClass))
 
         super.onConfigurationChanged(newConfig)
