@@ -11,6 +11,8 @@ Last update : 200405
 - MVVM with ViewModelFactory
 - ROOM
 - ViewPager with CardView
+- DarkMode compatibility
+- Foreground service (pretty simple)
 
 ### GOAL SPECIFICATIONS
 
