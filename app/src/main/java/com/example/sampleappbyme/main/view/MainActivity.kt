@@ -5,16 +5,12 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
-import com.example.sampleappbyme.main.ui.DessertTimer
-import com.example.sampleappbyme.main.util.SampleForegroundService
+import com.example.sampleappbyme.main.util.DessertTimer
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
-import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +33,8 @@ class MainActivity : AppCompatActivity() {
             }
         }, 1200)
 
-        dessertTimer = DessertTimer(this.lifecycle)
+        dessertTimer =
+            DessertTimer(this.lifecycle)
     }
 
     // 다크모드 변경시 앱 재시작을 통한 테마 설정

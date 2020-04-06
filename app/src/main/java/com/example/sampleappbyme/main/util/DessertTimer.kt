@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main.ui
+package com.example.sampleappbyme.main.util
 
 import android.os.Handler
 import androidx.lifecycle.Lifecycle
