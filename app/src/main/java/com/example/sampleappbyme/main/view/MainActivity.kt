@@ -10,6 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.ui.DessertTimer
 import com.example.sampleappbyme.main.util.SampleForegroundService
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private var splashShown = false
+
+    private lateinit var dessertTimer: DessertTimer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,8 @@ class MainActivity : AppCompatActivity() {
                 splashShown = true
             }
         }, 1200)
+
+        dessertTimer = DessertTimer(this.lifecycle)
     }
 
     // 다크모드 변경시 앱 재시작을 통한 테마 설정
