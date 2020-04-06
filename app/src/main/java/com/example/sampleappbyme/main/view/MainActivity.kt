@@ -1,5 +1,6 @@
 package com.example.sampleappbyme.main.view
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,13 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.action_go_to_main_fragment)
         }, 1200)
 
+        Timber.d("onCreate on MainActivity")
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        Timber.d("configuration changed : $newConfig")
+
+        super.onConfigurationChanged(newConfig)
     }
 
     fun setupForegroundService() {
