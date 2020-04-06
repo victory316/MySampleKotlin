@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.main.data.SampleData
 import com.example.sampleappbyme.main.data.SampleRepository
+import timber.log.Timber
 
 class TaskViewModel(
     val sampleRepository: SampleRepository
@@ -39,8 +40,10 @@ class TaskViewModel(
     val noTaskIconRes: LiveData<Int>
         get() = _noTaskIconRes
 
-//     This LiveData depends on another so we can use a transformation.
+    //     This LiveData depends on another so we can use a transformation.
     val empty: LiveData<Boolean> = Transformations.map(_items) {
+        Timber.tag("viewModelTest").d("is empty.")
+        _tasksAddViewVisible.value = true
         it.isEmpty()
     }
 
