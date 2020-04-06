@@ -20,14 +20,44 @@
 
             <Button
                 android:id="@+id/card_view_button"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
                 android:text="SHOW ME CardView ViewPager"
                 android:onClick="@{() -> viewModel.goToCardViewViewPager()}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/backdrop_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="SHOW ME Backdrop button"
+                android:onClick="@{() -> viewModel.showNotYetToast()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_view_button"/>
+
+            <Button
+                android:id="@+id/foreground_service_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="SHOW ME foreground service"
+                android:onClick="@{() -> viewModel.startForegroundService()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backdrop_button"/>
+
+            <Button
+                android:id="@+id/mvvm_view_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="SHOW ME MVVM list sample"
+                android:onClick="@{() -> viewModel.goToTaskViewFragment()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/foreground_service_button"/>
 
             <TextView
                 android:id="@+id/developer_tag_view_1"

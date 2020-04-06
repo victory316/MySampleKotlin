@@ -14,18 +14,20 @@
         <action
             android:id="@+id/action_go_to_recycler_view_fragment"
             app:destination="@id/recyclerViewFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_right"
-            app:popExitAnim="@anim/slide_in_left"
-            app:popEnterAnim="@anim/slide_in_right"/>
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
 
         <action
             android:id="@+id/action_go_to_card_view_fragment"
             app:destination="@id/cardViewFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_right"
-            app:popExitAnim="@anim/slide_in_left"
-            app:popEnterAnim="@anim/slide_in_right"/>
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
+
+        <action
+            android:id="@+id/action_go_to_task_view_fragment"
+            app:destination="@id/taskViewFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
 
     <fragment
@@ -37,23 +39,29 @@
         <action
             android:id="@+id/action_go_to_main_fragment"
             app:destination="@id/mainMenuFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_right"
-            app:popExitAnim="@anim/slide_in_left"
-            app:popEnterAnim="@anim/slide_in_right"/>
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
         android:id="@+id/recyclerViewFragment"
         android:name="com.example.sampleappbyme.main.view.fragment.RecyclerViewFragment"
         android:label="activity_main"
-        tools:layout="@layout/main_fragment">
+        tools:layout="@layout/recyclerview_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/cardViewFragment"
         android:name="com.example.sampleappbyme.main.view.fragment.CardViewFragment"
         android:label="activity_main"
-        tools:layout="@layout/main_fragment">
+        tools:layout="@layout/card_view_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskViewFragment"
+        android:name="com.example.sampleappbyme.main.view.fragment.TaskViewFragment"
+        android:label="activity_main"
+        tools:layout="@layout/task_view_fragment">
     </fragment>
 </navigation>

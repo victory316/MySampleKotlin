@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.example.sampleappbyme.main.data.SampleRepository
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
+import com.example.sampleappbyme.main.viewmodel.TaskViewModel
 
 class ViewModelFactory private constructor(
     private val sampleRepository: SampleRepository
@@ -16,7 +16,9 @@ class ViewModelFactory private constructor(
         with(modelClass) {
             when {
                 isAssignableFrom(MainViewModel::class.java) ->
-                    MainViewModel(sampleRepository)
+                    MainViewModel()
+                isAssignableFrom(TaskViewModel::class.java) ->
+                    TaskViewModel(sampleRepository)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }

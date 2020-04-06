@@ -67,5 +67,7 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
 
     kapt "androidx.room:room-compiler:$room_version"
+    
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
 }
