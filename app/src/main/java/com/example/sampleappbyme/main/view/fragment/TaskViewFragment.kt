@@ -8,14 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
+import com.example.sampleappbyme.R
 
 import com.example.sampleappbyme.databinding.CardViewFragmentBinding
 import com.example.sampleappbyme.databinding.TaskViewFragmentBinding
+import com.example.sampleappbyme.main.data.Event
 import com.example.sampleappbyme.main.ui.card.CardAdapter
 import com.example.sampleappbyme.main.ui.card.CardItem
 import com.example.sampleappbyme.main.ui.card.CardPagerAdapter
 import com.example.sampleappbyme.main.view.MainActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import timber.log.Timber
 
@@ -30,7 +34,13 @@ class TaskViewFragment : Fragment() {
         Timber.i("creating fragment view")
 
         binding = TaskViewFragmentBinding.inflate(inflater, container, false).apply {
-            viewmodel = (activity as MainActivity).obtainTaskViewModel()
+            viewmodel = (activity as MainActivity).obtainTaskViewModel().apply {
+                newTaskEvent.observe((activity as MainActivity), Observer<Event<Unit>> { event ->
+                    event.getContentIfNotHandled()?.let {
+                        (activity as MainActivity).addNewTask()
+                    }
+                })
+            }
         }
 
         setHasOptionsMenu(true)
@@ -63,11 +73,25 @@ class TaskViewFragment : Fragment() {
 
         binding.viewmodel?.let {
 //            view?.setupSnackbar(this, it.snackbarMessage, Snackbar.LENGTH_LONG)
+
         }
+
+
+
         binding.lifecycleOwner = this.viewLifecycleOwner
 
-//        setupFab()
+        setupFab()
 //        setupListAdapter()
 //        setupRefreshLayout()
+    }
+
+    private fun setupFab() {
+        activity?.findViewById<FloatingActionButton>(R.id.fab_add_task)?.let {
+//            it.setImageResource(R.drawable.ic_add)
+            it.setOnClickListener {
+                Timber.tag("fabTest").d("click!")
+                binding.viewmodel?.addNewTask()
+            }
+        }
     }
 }

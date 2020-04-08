@@ -9,13 +9,15 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.databinding.ActivityMainBinding
+import com.example.sampleappbyme.main.AddEditTaskActivity
+import com.example.sampleappbyme.main.TasksNavigator
 import com.example.sampleappbyme.main.util.DessertTimer
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
 import com.example.sampleappbyme.main.viewmodel.TaskViewModel
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), TasksNavigator {
 
     private lateinit var navController: NavController
     private var splashShown = false
@@ -55,6 +57,11 @@ class MainActivity : AppCompatActivity() {
     fun obtainViewModel(): MainViewModel = obtainViewModel(MainViewModel::class.java)
 
     fun obtainTaskViewModel(): TaskViewModel = obtainViewModel(TaskViewModel::class.java)
+
+    override fun addNewTask() {
+        val intent = Intent(this, AddEditTaskActivity::class.java)
+        startActivityForResult(intent, AddEditTaskActivity.REQUEST_CODE)
+    }
 
     companion object {
         const val CHANNEL_ID = "TEMP_CHANNEL"

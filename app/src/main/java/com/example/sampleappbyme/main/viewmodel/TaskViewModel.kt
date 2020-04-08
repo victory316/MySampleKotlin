@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.data.Event
 import com.example.sampleappbyme.main.data.SampleData
 import com.example.sampleappbyme.main.data.SampleRepository
 import timber.log.Timber
@@ -40,6 +41,11 @@ class TaskViewModel(
     val noTaskIconRes: LiveData<Int>
         get() = _noTaskIconRes
 
+    private val _newTaskEvent = MutableLiveData<Event<Unit>>()
+    val newTaskEvent: LiveData<Event<Unit>>
+        get() = _newTaskEvent
+
+
     //     This LiveData depends on another so we can use a transformation.
     val empty: LiveData<Boolean> = Transformations.map(_items) {
         Timber.tag("viewModelTest").d("is empty.")
@@ -48,6 +54,8 @@ class TaskViewModel(
     }
 
     fun addNewTask() {
+        Timber.tag("viewModelTest").d("adding new task")
 
+        _newTaskEvent.value = Event(Unit)
     }
 }
