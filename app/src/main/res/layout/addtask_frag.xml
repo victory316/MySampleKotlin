@@ -23,7 +23,7 @@
 
         <variable
             name="viewmodel"
-            type="com.example.sampleappbyme.main.mvvm.AddEditTaskViewModel"/>
+            type="com.example.sampleappbyme.main.viewmodel.AddEditTaskViewModel"/>
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

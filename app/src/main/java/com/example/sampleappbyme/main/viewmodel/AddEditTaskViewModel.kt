@@ -20,8 +20,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sampleappbyme.main.data.Event
-import com.example.sampleappbyme.main.data.SampleData
-import com.example.sampleappbyme.main.data.SampleDataSource
 import com.example.sampleappbyme.main.data.SampleRepository
 
 /**
@@ -35,7 +33,7 @@ import com.example.sampleappbyme.main.data.SampleRepository
  */
 class AddEditTaskViewModel(
     private val tasksRepository: SampleRepository
-) : ViewModel(), SampleDataSource.GetTaskCallback {
+) : ViewModel() {
 
     // Two-way databinding, exposing MutableLiveData
     val title = MutableLiveData<String>()
@@ -82,35 +80,35 @@ class AddEditTaskViewModel(
         isNewTask = false
         _dataLoading.value = true
 
-        tasksRepository.getTask(taskId, this)
+//        tasksRepository.getTask(taskId, this)
     }
 
-    override fun onTaskLoaded(task: SampleData) {
+//    override fun onTaskLoaded(task: Task) {
 //        title.value = task.title
 //        description.value = task.description
 //        taskCompleted = task.isCompleted
-        _dataLoading.value = false
-        isDataLoaded = true
-    }
-
-    override fun onDataNotAvailable() {
-        _dataLoading.value = false
-    }
+//        _dataLoading.value = false
+//        isDataLoaded = true
+//    }
+//
+//    override fun onDataNotAvailable() {
+//        _dataLoading.value = false
+//    }
 
     // Called when clicking on fab.
     internal fun saveTask() {
-        val currentTitle = title.value
-        val currentDescription = description.value
-
-        if (currentTitle == null || currentDescription == null) {
+//        val currentTitle = title.value
+//        val currentDescription = description.value
+//
+//        if (currentTitle == null || currentDescription == null) {
 //            _snackbarText.value =  Event(R.string.empty_task_message)
-            return
-        }
-//        if (SampleData(currentTitle, currentDescription ?: "").isEmpty) {
-////            _snackbarText.value =  Event(R.string.empty_task_message)
 //            return
 //        }
-
+//        if (SampleData(currentTitle, currentDescription ?: "").isEmpty) {
+//            _snackbarText.value =  Event(R.string.empty_task_message)
+//            return
+//        }
+//
 //        val currentTaskId = taskId
 //        if (isNewTask || currentTaskId == null) {
 //            createTask(Task(currentTitle, currentDescription))
@@ -122,8 +120,8 @@ class AddEditTaskViewModel(
     }
 
 //    private fun createTask(newTask: Task) {
-//        tasksRepository.saveTask(newTask)
-//        _taskUpdated.value = Event(Unit)
+//                tasksRepository.saveTask(newTask)
+//                _taskUpdated.value = Event(Unit)
 //    }
 //
 //    private fun updateTask(task: Task) {

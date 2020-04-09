@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.sampleappbyme.main.mvvm
+package com.example.sampleappbyme.main.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -77,6 +77,7 @@ class AddEditTaskFragment : Fragment() {
     companion object {
         const val ARGUMENT_EDIT_TASK_ID = "EDIT_TASK_ID"
 
-        fun newInstance() = AddEditTaskFragment()
+        fun newInstance() =
+            AddEditTaskFragment()
     }
 }

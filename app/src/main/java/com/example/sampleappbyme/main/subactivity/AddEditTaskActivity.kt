@@ -19,7 +19,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.main.util.AddEditTaskNavigator
-import com.example.sampleappbyme.main.mvvm.AddEditTaskFragment
+import com.example.sampleappbyme.main.view.fragment.AddEditTaskFragment
 import com.example.sampleappbyme.main.util.ADD_EDIT_RESULT_OK
 import com.example.sampleappbyme.main.util.setupActionBar
 
@@ -63,7 +63,8 @@ class AddEditTaskActivity : AppCompatActivity(),
     private fun obtainViewFragment() = supportFragmentManager.findFragmentById(R.id.contentFrame) ?:
             AddEditTaskFragment.newInstance().apply {
                 arguments = Bundle().apply {
-                    putString(AddEditTaskFragment.ARGUMENT_EDIT_TASK_ID,
+                    putString(
+                        AddEditTaskFragment.ARGUMENT_EDIT_TASK_ID,
                             intent.getStringExtra(AddEditTaskFragment.ARGUMENT_EDIT_TASK_ID))
                 }
             }

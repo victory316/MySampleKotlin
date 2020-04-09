@@ -6,8 +6,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import com.example.sampleappbyme.main.ViewModelFactory
+import com.example.sampleappbyme.main.viewmodel.ViewModelFactory
 
 
 const val ADD_EDIT_RESULT_OK = Activity.RESULT_FIRST_USER + 1

@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main.view
+package com.example.sampleappbyme.main
 
 import android.content.Intent
 import android.content.res.Configuration
