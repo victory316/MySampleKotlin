@@ -34,6 +34,7 @@ class TaskViewFragment : Fragment() {
         Timber.i("creating fragment view")
 
         binding = TaskViewFragmentBinding.inflate(inflater, container, false).apply {
+
             viewmodel = (activity as MainActivity).obtainTaskViewModel().apply {
                 newTaskEvent.observe((activity as MainActivity), Observer<Event<Unit>> { event ->
                     event.getContentIfNotHandled()?.let {
@@ -87,7 +88,6 @@ class TaskViewFragment : Fragment() {
 
     private fun setupFab() {
         activity?.findViewById<FloatingActionButton>(R.id.fab_add_task)?.let {
-//            it.setImageResource(R.drawable.ic_add)
             it.setOnClickListener {
                 Timber.tag("fabTest").d("click!")
                 binding.viewmodel?.addNewTask()

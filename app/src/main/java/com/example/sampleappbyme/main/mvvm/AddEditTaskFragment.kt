@@ -53,7 +53,7 @@ class AddEditTaskFragment : Fragment() {
             savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.addtask_frag, container, false)
         viewDataBinding = AddtaskFragBinding.bind(root).apply {
-            viewmodel = (activity as AddEditTaskActivity).obtainViewModel()
+//            viewmodel = (activity as AddEditTaskActivity).obtainViewModel()
         }
         viewDataBinding.setLifecycleOwner(this.viewLifecycleOwner)
         setHasOptionsMenu(true)

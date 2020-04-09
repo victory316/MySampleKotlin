@@ -22,6 +22,7 @@ import com.example.sampleappbyme.R
 import com.example.sampleappbyme.main.mvvm.AddEditTaskFragment
 import com.example.sampleappbyme.main.mvvm.AddEditTaskViewModel
 import com.example.sampleappbyme.main.util.ADD_EDIT_RESULT_OK
+import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.util.setupActionBar
 
 /**
@@ -55,9 +56,9 @@ class AddEditTaskActivity : AppCompatActivity(), AddEditTaskNavigator {
 
     private fun subscribeToNavigationChanges() {
         // The activity observes the navigation events in the ViewModel
-        obtainViewModel().taskUpdatedEvent.observe(this, Observer {
-            this@AddEditTaskActivity.onTaskSaved()
-        })
+//        obtainViewModel().taskUpdatedEvent.observe(this, Observer {
+//            this@AddEditTaskActivity.onTaskSaved()
+//        })
     }
 
     private fun obtainViewFragment() = supportFragmentManager.findFragmentById(R.id.contentFrame) ?:
@@ -68,7 +69,7 @@ class AddEditTaskActivity : AppCompatActivity(), AddEditTaskNavigator {
                 }
             }
 
-    fun obtainViewModel(): AddEditTaskViewModel = obtainViewModel()
+//    fun obtainViewModel(): AddEditTaskViewModel = obtainViewModel(AddEditTaskViewModel::class.java)
 
     companion object {
         const val REQUEST_CODE = 1

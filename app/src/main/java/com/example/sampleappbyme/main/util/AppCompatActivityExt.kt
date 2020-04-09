@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.sampleappbyme.main.ViewModelFactory
 
 
@@ -15,6 +16,7 @@ const val EDIT_RESULT_OK = Activity.RESULT_FIRST_USER + 3
 
 fun <T : ViewModel> AppCompatActivity.obtainViewModel(viewModelClass: Class<T>) =
     ViewModelProvider(this, ViewModelFactory.getInstance(application)).get(viewModelClass)
+
 
 fun AppCompatActivity.setupActionBar(@IdRes toolbarId: Int, action: ActionBar.() -> Unit) {
     setSupportActionBar(findViewById(toolbarId))
