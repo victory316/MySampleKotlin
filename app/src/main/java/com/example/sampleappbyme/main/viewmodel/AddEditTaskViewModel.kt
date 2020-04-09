@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.sampleappbyme.main
+package com.example.sampleappbyme.main.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

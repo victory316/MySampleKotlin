@@ -13,22 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.sampleappbyme.main
+package com.example.sampleappbyme.main.subactivity
 
-import androidx.lifecycle.Observer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sampleappbyme.R
+import com.example.sampleappbyme.main.util.AddEditTaskNavigator
 import com.example.sampleappbyme.main.mvvm.AddEditTaskFragment
-import com.example.sampleappbyme.main.mvvm.AddEditTaskViewModel
 import com.example.sampleappbyme.main.util.ADD_EDIT_RESULT_OK
-import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.util.setupActionBar
 
 /**
  * Displays an add or edit task screen.
  */
-class AddEditTaskActivity : AppCompatActivity(), AddEditTaskNavigator {
+class AddEditTaskActivity : AppCompatActivity(),
+    AddEditTaskNavigator {
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

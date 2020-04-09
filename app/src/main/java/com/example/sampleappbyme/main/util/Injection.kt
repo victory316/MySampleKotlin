@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main
+package com.example.sampleappbyme.main.util
 
 import android.content.Context
 import com.example.sampleappbyme.main.data.*

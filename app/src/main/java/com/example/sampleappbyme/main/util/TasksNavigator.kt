@@ -1,4 +1,4 @@
-package com.example.sampleappbyme.main
+package com.example.sampleappbyme.main.util
 
 interface TasksNavigator {
 

@@ -19,13 +19,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.databinding.AddtaskFragBinding
-import com.example.sampleappbyme.main.AddEditTaskActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 /**
  * Main UI for the add task screen. Users can enter a task title and description.

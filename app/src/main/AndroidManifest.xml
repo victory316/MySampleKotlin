@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".main.AddEditTaskActivity"
+        <activity android:name=".main.subactivity.AddEditTaskActivity"
             android:configChanges="uiMode"/>
     </application>
 

@@ -9,15 +9,16 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.sampleappbyme.R
 import com.example.sampleappbyme.databinding.ActivityMainBinding
-import com.example.sampleappbyme.main.AddEditTaskActivity
-import com.example.sampleappbyme.main.TasksNavigator
+import com.example.sampleappbyme.main.subactivity.AddEditTaskActivity
+import com.example.sampleappbyme.main.util.TasksNavigator
 import com.example.sampleappbyme.main.util.DessertTimer
 import com.example.sampleappbyme.main.util.obtainViewModel
 import com.example.sampleappbyme.main.viewmodel.MainViewModel
 import com.example.sampleappbyme.main.viewmodel.TaskViewModel
 
 
-class MainActivity : AppCompatActivity(), TasksNavigator {
+class MainActivity : AppCompatActivity(),
+    TasksNavigator {
 
     private lateinit var navController: NavController
     private var splashShown = false
