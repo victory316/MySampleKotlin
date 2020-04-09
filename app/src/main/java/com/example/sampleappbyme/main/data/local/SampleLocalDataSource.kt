@@ -32,4 +32,8 @@ class SampleLocalDataSource(
             INSTANCE = null
         }
     }
+
+    override fun getTask(taskId: String, callback: SampleDataSource.GetTaskCallback) {
+
+    }
 }

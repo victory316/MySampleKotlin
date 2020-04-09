@@ -1,7 +1,6 @@
 package com.example.sampleappbyme.main.view.fragment
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,16 +13,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.sampleappbyme.databinding.MainFragmentBinding
 import com.example.sampleappbyme.main.util.SampleForegroundService
-import com.example.sampleappbyme.main.view.MainActivity
+import com.example.sampleappbyme.main.MainActivity
 import timber.log.Timber
 
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() =
-            MainFragment()
-    }
 
     private lateinit var mainFragmentBinding: MainFragmentBinding
     private lateinit var navController: NavController

@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<!--        <import type="android.view.View" />-->
-<!--        <import type="androidx.core.content.ContextCompat"/>-->
+        <import type="android.view.View" />
+        <import type="androidx.core.content.ContextCompat"/>
 
         <variable
             name="viewmodel"
@@ -15,7 +15,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0091EA"
         tools:context=".main.view.fragment.TaskViewFragment">
 
         <RelativeLayout
@@ -25,65 +24,68 @@
             android:clickable="true"
             android:orientation="vertical">
 
-<!--            <LinearLayout-->
-<!--                android:id="@+id/tasksLL"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:orientation="vertical">-->
+            <LinearLayout
+                android:id="@+id/tasksLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-<!--                <TextView-->
-<!--                    android:id="@+id/filteringLabel"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
-<!--                    android:gravity="center_vertical"-->
-<!--                    android:layout_marginLeft="@dimen/list_item_padding"-->
-<!--                    android:layout_marginRight="@dimen/list_item_padding"-->
-<!--                    android:layout_marginTop="@dimen/activity_vertical_margin"-->
-<!--                    android:layout_marginBottom="@dimen/activity_vertical_margin"-->
-<!--                    android:text="@{context.getString(viewmodel.currentFilteringLabel)}" />-->
+                <TextView
+                    android:id="@+id/filteringLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/list_item_padding"
+                    android:layout_marginRight="@dimen/list_item_padding"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin" />
 
 <!--                <ListView-->
 <!--                    android:id="@+id/tasks_list"-->
 <!--                    app:items="@{viewmodel.items}"-->
 <!--                    android:layout_width="match_parent"-->
 <!--                    android:layout_height="wrap_content" />-->
-<!--            </LinearLayout>-->
 
-<!--            <LinearLayout-->
-<!--                android:id="@+id/noTasks"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:orientation="vertical"-->
-<!--                android:visibility="@{viewmodel.empty ? View.VISIBLE : View.GONE}">-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tasks_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/noTasksIcon"-->
-<!--                    android:layout_width="48dp"-->
-<!--                    android:layout_height="48dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:src="@{ContextCompat.getDrawable(context, viewmodel.noTaskIconRes)}" />-->
+            <LinearLayout
+                android:id="@+id/noTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:visibility="@{viewmodel.empty ? View.VISIBLE : View.GONE}">
 
-<!--                <TextView-->
-<!--                    android:id="@+id/noTasksMain"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:text="@{context.getString(viewmodel.noTasksLabel)}"-->
-<!--                    android:layout_marginBottom="@dimen/list_item_padding"/>-->
+                <ImageView
+                    android:id="@+id/noTasksIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/noTasksAdd"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="48dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="no tasks added"-->
-<!--                    android:onClick="@{() -> viewmodel.addNewTask()}"-->
-<!--                    android:visibility="@{viewmodel.tasksAddViewVisible ? View.VISIBLE : View.GONE}" />-->
+                <TextView
+                    android:id="@+id/noTasksMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/list_item_padding"/>
 
-<!--            </LinearLayout>-->
+                <TextView
+                    android:id="@+id/noTasksAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="No tasks added!"
+                    android:textSize="20sp"
+                    android:onClick="@{() -> viewmodel.addNewTask()}"
+                    android:visibility="@{viewmodel.tasksAddViewVisible ? View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

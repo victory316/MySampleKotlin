@@ -15,7 +15,7 @@
 
         <service android:name=".main.util.SampleForegroundService" />
 
-        <activity android:name=".main.view.MainActivity"
+        <activity android:name=".main.MainActivity"
             android:configChanges="uiMode">
 
             <intent-filter>
@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".main.subactivity.AddEditTaskActivity"
+            android:configChanges="uiMode"/>
     </application>
 
 </manifest>

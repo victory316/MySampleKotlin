@@ -15,11 +15,6 @@ import com.example.sampleappbyme.main.ui.card.CardItem
 import com.example.sampleappbyme.main.ui.card.CardPagerAdapter
 
 class CardViewFragment : Fragment() {
-
-    companion object {
-        fun newInstance() =
-            CardViewFragment()
-    }
     
     private lateinit var binding: CardViewFragmentBinding
 

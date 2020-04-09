@@ -14,9 +14,9 @@ class MyApplication: Application() {
 
         if (BuildConfig.DEBUG) {
             Timber.plant(DebugTree())
-
-            // 앱 설정에 따라 NightMode 지정
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
+
+        // 앱 설정에 따라 NightMode 지정
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
     }
 }

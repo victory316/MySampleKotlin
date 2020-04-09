@@ -27,7 +27,8 @@
                 android:onClick="@{() -> viewModel.goToCardViewViewPager()}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/backdrop_button"/>
 
             <Button
                 android:id="@+id/backdrop_button"
@@ -37,7 +38,8 @@
                 android:onClick="@{() -> viewModel.showNotYetToast()}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card_view_button"/>
+                app:layout_constraintTop_toBottomOf="@id/card_view_button"
+                app:layout_constraintBottom_toTopOf="@id/foreground_service_button"/>
 
             <Button
                 android:id="@+id/foreground_service_button"
@@ -47,7 +49,8 @@
                 android:onClick="@{() -> viewModel.startForegroundService()}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backdrop_button"/>
+                app:layout_constraintTop_toBottomOf="@id/backdrop_button"
+                app:layout_constraintBottom_toTopOf="@id/mvvm_view_button"/>
 
             <Button
                 android:id="@+id/mvvm_view_button"
@@ -57,7 +60,18 @@
                 android:onClick="@{() -> viewModel.goToTaskViewFragment()}"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/foreground_service_button"/>
+                app:layout_constraintTop_toBottomOf="@id/foreground_service_button"
+                app:layout_constraintBottom_toTopOf="@id/lifecycle_sample"/>
+
+            <Button
+                android:id="@+id/lifecycle_sample"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="SHOW ME lifecycle sample"
+                android:onClick="@{() -> viewModel.startLifecycleFragment()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mvvm_view_button"/>
 
             <TextView
                 android:id="@+id/developer_tag_view_1"
@@ -65,8 +79,10 @@
                 android:layout_height="wrap_content"
                 android:text="BY CSH"
                 android:layout_margin="10dp"
+                app:layout_constraintVertical_bias="0.9"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lifecycle_sample"
                 app:layout_constraintBottom_toTopOf="@id/developer_tag_view_2" />
 
             <TextView

@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName= "sample")
+@Entity(tableName = "sample")
 data class SampleData(
 
     @PrimaryKey(autoGenerate = false)
@@ -18,5 +18,12 @@ data class SampleData(
     var score: Int,
 
     @ColumnInfo(name = "favorite")
-    var favorite: Int
+    var favorite: Int,
+
+    @ColumnInfo(name = "checked")
+    var checked: Boolean,
+
+    @ColumnInfo(name = "completed")
+    var completed: Boolean
+
 )

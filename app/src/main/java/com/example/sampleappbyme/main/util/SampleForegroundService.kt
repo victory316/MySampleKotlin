@@ -9,7 +9,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.example.sampleappbyme.main.view.MainActivity
+import com.example.sampleappbyme.main.MainActivity
 
 
 /**
